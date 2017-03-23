@@ -5,7 +5,8 @@ var server = require('http').createServer(app);
 var io = require('socket.io').listen(server);
 var port = process.env.PORT || 3000;
 var oxford = require('project-oxford');
-var client = new oxford.Client(process.env.myoxfordkey || 'c7692294d72a40b6a67f55996e246d4c');
+process.env.myoxfordkey = 'c7692294d72a40b6a67f55996e246d4c';
+var client = new oxford.Client(process.env.myoxfordkey);
 
 server.listen(port);
 
